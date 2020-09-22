@@ -1,6 +1,8 @@
 #ifndef pilhaEncadeada
+#define pilhaEncadeada
 #include "Pilha.h"
-#define NULL nullptr
+#include "PilhaEncadeada.h"
+#include "TipoCelula.h"
 
 class PilhaEncadeada : public Pilha {
 	public:

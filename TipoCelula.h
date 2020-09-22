@@ -1,6 +1,5 @@
 #ifndef celula
 #define celula
-#define NULL nullptr
 
 class TipoCelula {
 	public:
