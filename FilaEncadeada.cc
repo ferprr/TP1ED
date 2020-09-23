@@ -45,16 +45,17 @@ void FilaEncadeada::Limpa() {
     tamanho = 0;
     tras = frente;
 }
-int FilaEncadeada::GetKey(int key) {
+bool FilaEncadeada::FindKey(int key) {
     TipoCelula *p;
     int aux;
     p = frente->prox;
 
     while (p!=NULL) {
         if(p->item == key){
-            aux = p->item;
-            return aux;
+            //aux = p->item;
+            return true;
         }
         p = frente->prox;
     }
+    return false;
 }

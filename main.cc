@@ -1,18 +1,18 @@
 #include <cstdio>
 #include <iostream>
+#include <ios>
 #include "PilhaEncadeada.h"
 #include "FilaEncadeada.h"
 
 using std::cout;
 using std::cin;
 using std::endl;
-using std::string;
 
 int main() {
 
   PilhaEncadeada waiting_for_combat;
   FilaEncadeada in_combat;
-
+  FilaEncadeada broken;
 
   int ship_size;
   cout << "Enter a size for the ship: ";
@@ -33,30 +33,33 @@ int main() {
   int option;
   cout << "Enter an option: ";
   cin >> option;
-  //int operacao;
-  //while(scanf("%d", &operacao) != EOF) {
-    //desenvolver o código relacionado as operações a serem realizadas
-  //}
-  switch (option)
-  {
-  case 0 : //enviar nave mais apta da fila para combate
-    int combat = waiting_for_combat.Desempilha();
-    in_combat.Enfileira(combat);
-    cout << "Ship %d in combat.", combat;
-    break;
-  case -1 : //nave avariada consertada
-    /* code */
-    break;
-  case -2 : //impressão de naves aguardando para combate
-    print_waiting_for_combat(waiting_for_combat);
-    break;
-  case -3 : //impressão de naves avariadas
-    /* code */
-    break;
-  default:
-    break;
-  }
 
+  while(cin >> option) {
+    switch (option)
+    {
+    case 0 : //enviar nave mais apta da fila para combate
+      int combat = waiting_for_combat.Desempilha();
+      in_combat.Enfileira(combat);
+      cout << "Ship %d in combat.", combat;
+      break;
+    case -1 : //nave avariada consertada
+      break;
+    case -2 : //impressão de naves aguardando para combate
+      print_waiting_for_combat(waiting_for_combat);
+      break;
+    case -3 : //impressão de naves avariadas
+      break;
+    default:
+      if (in_combat.FindKey(option)) {
+        broken.Enfileira(option);
+        cout << "Ship %d broken.", option;
+      } else {
+        cout << "Invalid option. Try again: " << endl;
+        cin >> option;
+      }
+      break;
+    }
+  }
   return 0;
 }
 void print_waiting_for_combat(PilhaEncadeada &waiting_for_combat){
