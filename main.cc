@@ -51,6 +51,7 @@ int main() {
       print_waiting_for_combat(waiting_for_combat);
       break;
     case -3 : //impressão de naves avariadas
+      print_broken(broken);
       break;
     default:
       if (in_combat.FindKey(option)) {
@@ -70,4 +71,12 @@ void print_waiting_for_combat(PilhaEncadeada &waiting_for_combat){
       int x = waiting_for_combat.Desempilha();
       cout << "Id ship: ";
       cout << x << endl;
+    }
+}
+void print_broken(FilaEncadeada &broken){
+  while(!broken.Vazia()){
+      int x = broken.Desenfileira();
+      cout << "Id ship: ";
+      cout << x << endl;
+  }
 }
