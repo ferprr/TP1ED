@@ -10,6 +10,7 @@ class TipoCelula {
 		TipoCelula *prox;
 
 	friend class PilhaEncadeada;
+	friend class FilaEncadeada;
 };
 
 #endif
