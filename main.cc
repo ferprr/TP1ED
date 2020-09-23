@@ -27,15 +27,42 @@ int main() {
     wait_for_combat.Empilha(id_ship);
   }
 
+  int option;
+  cout << "Enter an option: ";
+  cin >> option;
+    //int operacao;
+  //while(scanf("%d", &operacao) != EOF) {
+    //desenvolver o código relacionado as operações a serem realizadas
+  //}
+  switch (option)
+  {
+  case 0 :
+    /* code */
+    break;
+  case -1 :
+    /* code */
+    break;
+  case -2 :
+    /* code */
+    break;
+  case -3 :
+    /* code */
+    break;
+  default:
+  if ()
+  {
+    /* code */
+  }
+  
+    break;
+  }
+
   while(!wait_for_combat.Vazia()){
       int x = wait_for_combat.Desempilha();
       cout << "Id ship: ";
       cout << x << endl;
   }
   
-  //int operacao;
-  //while(scanf("%d", &operacao) != EOF) {
-    //desenvolver o código relacionado as operações a serem realizadas
-  //}
+
   return 0;
 }
