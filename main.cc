@@ -10,6 +10,7 @@ using std::string;
 int main() {
 
   PilhaEncadeada waiting_for_combat;
+  PilhaEncadeada in_combat;
 
   int ship_size;
   cout << "Enter a size for the ship: ";
@@ -38,6 +39,8 @@ int main() {
   {
   case 0 : //enviar nave mais apta da fila para combate
     int combat = waiting_for_combat.Desempilha();
+    in_combat.Empilha(combat);
+    cout << "Ship %d in combat.", combat;
     break;
   case -1 : //nave avariada consertada
     /* code */
