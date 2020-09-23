@@ -43,6 +43,9 @@ int main() {
       cout << "Ship %d in combat.", combat;
       break;
     case -1 : //nave avariada consertada
+      int fixed = broken.Desenfileira();
+      waiting_for_combat.Empilha(fixed);
+      cout << "Ship fixed." << endl;
       break;
     case -2 : //impressão de naves aguardando para combate
       print_waiting_for_combat(waiting_for_combat);
