@@ -11,6 +11,7 @@ class FilaEncadeada : public Fila {
         void Enfileira(int item);
         int Desenfileira();
         void Limpa();
+        int GetKey(int key);
 
     private:
         TipoCelula* frente;
