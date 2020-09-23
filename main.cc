@@ -37,15 +37,15 @@ int main() {
   switch (option)
   {
   case 0 : //enviar nave mais apta da fila para combate
+    int combat = waiting_for_combat.Desempilha();
+    break;
+  case -1 : //nave avariada consertada
     /* code */
     break;
-  case -1 : //nave avariada consertada, primeira nave avariada, primeira a ser consertada 
-    /* code */
-    break;
-  case -2 :
+  case -2 : //impressão de naves aguardando para combate
     print_waiting_for_combat(waiting_for_combat);
     break;
-  case -3 :
+  case -3 : //impressão de naves avariadas
     /* code */
     break;
   default:
@@ -54,7 +54,7 @@ int main() {
 
   return 0;
 }
-void print_waiting_for_combat(PilhaEncadeada waiting_for_combat){
+void print_waiting_for_combat(PilhaEncadeada &waiting_for_combat){
     while(!waiting_for_combat.Vazia()){
       int x = waiting_for_combat.Desempilha();
       cout << "Id ship: ";
