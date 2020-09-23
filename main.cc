@@ -9,7 +9,7 @@ using std::string;
 
 int main() {
 
-  PilhaEncadeada wait_for_combat;
+  PilhaEncadeada waiting_for_combat;
 
   int ship_size;
   cout << "Enter a size for the ship: ";
@@ -24,45 +24,39 @@ int main() {
     cout << "Enter an id for the ship: ";
     cin >> id_ship;
 
-    wait_for_combat.Empilha(id_ship);
+    waiting_for_combat.Empilha(id_ship);
   }
 
   int option;
   cout << "Enter an option: ";
   cin >> option;
-    //int operacao;
+  //int operacao;
   //while(scanf("%d", &operacao) != EOF) {
     //desenvolver o código relacionado as operações a serem realizadas
   //}
   switch (option)
   {
-  case 0 :
+  case 0 : //enviar nave mais apta da fila para combate
     /* code */
     break;
-  case -1 :
+  case -1 : //nave avariada consertada, primeira nave avariada, primeira a ser consertada 
     /* code */
     break;
   case -2 :
-    /* code */
+    print_waiting_for_combat(waiting_for_combat);
     break;
   case -3 :
     /* code */
     break;
   default:
-  if ()
-  {
-    /* code */
-  }
-  
     break;
   }
 
-  while(!wait_for_combat.Vazia()){
-      int x = wait_for_combat.Desempilha();
+  return 0;
+}
+void print_waiting_for_combat(PilhaEncadeada waiting_for_combat){
+    while(!waiting_for_combat.Vazia()){
+      int x = waiting_for_combat.Desempilha();
       cout << "Id ship: ";
       cout << x << endl;
-  }
-  
-
-  return 0;
 }
