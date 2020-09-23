@@ -11,25 +11,26 @@ int main() {
 
   PilhaEncadeada wait_for_combat;
 
-  int fleet_size;
-  cout << "Enter a size for the fleet: ";
-  cin >> fleet_size;
-  while (fleet_size<0 || fleet_size>5000) {
-    cout << "Size fleet invalid. Enter a number from 0 to 5000.";
-    cin >> fleet_size;
+  int ship_size;
+  cout << "Enter a size for the ship: ";
+  cin >> ship_size;
+  while (ship_size<0 || ship_size>5000) {
+    cout << "Size ship invalid. Enter a number from 0 to 5000.";
+    cin >> ship_size;
   }
 
-  for(int i=0; i < fleet_size; i++){
-    int id_nave;
-    cin >> id_nave;
+  for(int i=0; i < ship_size; i++){
+    int id_ship;
+    cout << "Enter an id for the ship: ";
+    cin >> id_ship;
 
-    wait_for_combat.Empilha(id_nave);
+    wait_for_combat.Empilha(id_ship);
   }
 
   while(!wait_for_combat.Vazia()){
       int x = wait_for_combat.Desempilha();
-      cout << "Id nave: ";
-      cout << x;
+      cout << "Id ship: ";
+      cout << x << endl;
   }
   
   //int operacao;
