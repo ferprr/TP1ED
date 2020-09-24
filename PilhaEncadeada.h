@@ -1,8 +1,6 @@
 #ifndef pilhaEncadeada
 #define pilhaEncadeada
 #include "Pilha.h"
-#include "PilhaEncadeada.h"
-#include "TipoCelula.h"
 
 class PilhaEncadeada : public Pilha {
 	public:
@@ -12,6 +10,7 @@ class PilhaEncadeada : public Pilha {
 		void Empilha(int item);
 		int Desempilha();
 		void Limpa();
+		void Print();
 
 	private:
 		TipoCelula* topo;

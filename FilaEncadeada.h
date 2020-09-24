@@ -11,7 +11,9 @@ class FilaEncadeada : public Fila {
         void Enfileira(int item);
         int Desenfileira();
         void Limpa();
-        bool FindKey(int key);
+        int FindPosition(int key);
+        void Remove(int pos);
+        void Print();
 
     private:
         TipoCelula* frente;

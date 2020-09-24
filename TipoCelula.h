@@ -11,6 +11,7 @@ class TipoCelula {
 
 	friend class PilhaEncadeada;
 	friend class FilaEncadeada;
+	friend class ListaEncadeada;
 };
 
 #endif
